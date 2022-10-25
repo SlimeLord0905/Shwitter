@@ -36,7 +36,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/fab_edit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/fab_edit"
-        app:srcCompat="@drawable/fab_deleate" />
+        app:srcCompat="@drawable/fab_delete" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_edit"

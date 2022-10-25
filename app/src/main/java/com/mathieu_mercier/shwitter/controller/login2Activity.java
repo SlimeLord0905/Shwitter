@@ -13,6 +13,7 @@ import com.mathieu_mercier.shwitter.R;
 import com.mathieu_mercier.shwitter.api.UserRequestListener;
 import com.mathieu_mercier.shwitter.databinding.ActivityLogin2Binding;
 import com.mathieu_mercier.shwitter.model.UserService;
+import com.mathieu_mercier.shwitter.controller.bottom_nav.homeActivity;
 
 public class login2Activity extends AppCompatActivity {
 
@@ -66,7 +67,7 @@ public class login2Activity extends AppCompatActivity {
     }
     private void loggedIn()
     {
-        Intent LogedInIntent = new Intent(login2Activity.this, SignupActivity.class);
+        Intent LogedInIntent = new Intent(login2Activity.this, homeActivity.class);
         startActivity(LogedInIntent);
 
         finishAffinity();
