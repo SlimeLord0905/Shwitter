@@ -4,7 +4,6 @@ import android.content.Context;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.mathieu_mercier.shwitter.api.CommentFetchListener;
 import com.mathieu_mercier.shwitter.api.MarthaQueue;
 import com.mathieu_mercier.shwitter.api.MarthaRequest;
 import com.mathieu_mercier.shwitter.api.MessageFetchListener;
