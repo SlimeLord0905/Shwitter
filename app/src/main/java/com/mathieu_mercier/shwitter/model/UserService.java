@@ -81,7 +81,7 @@ public class UserService {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Log.d("RECIPESEASY", "onErrorResponse"+ error.toString());
+                Log.d("SHWITTER", "onErrorResponse"+ error.toString());
                 Listener.onResponse(false);
             }
         });

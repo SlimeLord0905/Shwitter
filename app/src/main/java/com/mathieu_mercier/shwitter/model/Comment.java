@@ -18,7 +18,7 @@ public class Comment {
     public Comment(JSONObject commentJson) throws JSONException {
 
         this.id = commentJson.getInt("id");
-        this.post_id = commentJson.getInt("id");
+        this.post_id = commentJson.getInt("post_id");
         this.content = commentJson.getString("username");
         Timestamp stamp = new Timestamp(commentJson.getLong("created_at"));
         this.created_at = new Date(stamp.getTime());
@@ -29,6 +29,18 @@ public class Comment {
 
     public int getId() {
         return id;
+    }
+    public int getPostId() {
+        return post_id;
+    }
+    public String getContent() {
+        return content;
+    }
+    public Date getCreatedAt() {
+        return created_at;
+    }
+    public Date getUpdatedAt() {
+        return updated_at;
     }
 
     public Comment(int id, int post_id , String content, Date created_at, Date updated_at) {
