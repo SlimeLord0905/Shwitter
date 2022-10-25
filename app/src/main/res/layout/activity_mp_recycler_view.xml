@@ -33,8 +33,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="32dp"
+        android:layout_marginBottom="9dp"
         android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/textView4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView4"
-        tools:layout_editor_absoluteY="27dp" />
+        app:layout_constraintStart_toEndOf="@+id/textView4" />
 </androidx.constraintlayout.widget.ConstraintLayout>

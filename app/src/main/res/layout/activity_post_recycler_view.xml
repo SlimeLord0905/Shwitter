@@ -35,7 +35,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/titreEditView"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/fab_deleate" />
+        app:srcCompat="@drawable/fab_delete" />
 
     <TextView
         android:id="@+id/usernameRwPost"
