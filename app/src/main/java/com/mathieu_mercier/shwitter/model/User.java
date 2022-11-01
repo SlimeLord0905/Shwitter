@@ -18,6 +18,9 @@ public class User {
     public int getId() {
         return id;
     }
+    public String getUsername() {
+        return username;
+    }
 
     public User(int id, String username) {
         this.id = id;

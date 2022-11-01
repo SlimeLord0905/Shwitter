@@ -11,11 +11,13 @@ import com.mathieu_mercier.shwitter.api.MarthaRequest;
 import com.mathieu_mercier.shwitter.api.UserRequestListener;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.mathieu_mercier.shwitter.api.UserSelectFetchListener;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 
 public class UserService {
     private static UserService instance = null;
@@ -137,6 +139,51 @@ public class UserService {
             MarthaQueue.getInstance(context).send(SignupRequest);
 
         }
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public void getUserById(int id, final UserSelectFetchListener Listener, Context context) {
+
+        JSONObject Params = new JSONObject();
+        try {
+            Params.put("id", id);
+        }catch(JSONException e)
+        {
+            e.printStackTrace();
+        }
+
+
+        MarthaRequest UserRequest = new MarthaRequest("select-user-by-id", Params, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                try {
+                    JSONArray data = response.getJSONArray("data");
+                    ArrayList<User> users = new ArrayList<>();
+                    for (int i = 0; i < data.length(); i++) {
+                        users.add(new User(data.getJSONObject(i)));
+                    }
+
+                    Listener.onResponse(users);
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Listener.onResponse(new ArrayList<>());
+
+                }
+
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.d("SHWITTER", "onErrorResponse"+ error.toString());
+                Listener.onResponse(new ArrayList<>(
+
+                ));
+            }
+        });
+
+        MarthaQueue.getInstance(context).send(UserRequest);
     }
 
     public void logOut() {

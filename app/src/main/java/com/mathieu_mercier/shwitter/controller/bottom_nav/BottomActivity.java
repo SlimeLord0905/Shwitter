@@ -36,7 +36,6 @@ public abstract class BottomActivity extends AppCompatActivity {
                     case R.id.home:
                         destinationActivity =  homeActivity.class;
                         break;
-
                     case R.id.friend:
                         destinationActivity = FriendActivity.class;
                         break;

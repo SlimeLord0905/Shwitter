@@ -6,7 +6,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.mathieu_mercier.shwitter.api.MarthaQueue;
 import com.mathieu_mercier.shwitter.api.MarthaRequest;
-import com.mathieu_mercier.shwitter.api.MessageFetchListener;
 import com.mathieu_mercier.shwitter.api.PostFetchListener;
 
 import org.json.JSONArray;
@@ -59,7 +58,7 @@ public class PostService {
         MarthaQueue.getInstance(context).send(fetchRequest);
     }
 
-    public void getPostById(int user_id, PostFetchListener Listener, Context context) {
+    public ArrayList<Post> getPostById(int user_id, PostFetchListener Listener, Context context) {
         JSONObject fetchParams = new JSONObject();
         try {
             fetchParams.put("user_id", user_id);
@@ -90,5 +89,6 @@ public class PostService {
         });
 
         MarthaQueue.getInstance(context).send(fetchRequest);
+        return null;
     }
 }
