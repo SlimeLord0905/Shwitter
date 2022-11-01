@@ -10,7 +10,6 @@ import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.mathieu_mercier.shwitter.api.UserSelectFetchListener;
-import com.mathieu_mercier.shwitter.databinding.RecyclerViewFriendBinding;
 import com.mathieu_mercier.shwitter.databinding.RecyclerViewFriendRequestBinding;
 import com.mathieu_mercier.shwitter.model.Relation;
 import com.mathieu_mercier.shwitter.model.User;

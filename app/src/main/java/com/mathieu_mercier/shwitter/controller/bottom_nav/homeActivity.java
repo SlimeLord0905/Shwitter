@@ -22,12 +22,13 @@ public class homeActivity extends BottomActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.activity_home_page);
+        //setContentView(R.layout.activity_home_page);
         // On assigne la vue avant d'appeler super, car la classe parent initialise la bottom nav
-        super.onCreate(savedInstanceState);
-
         binding = ActivityHomePageBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        super.onCreate(savedInstanceState);
+
 
         binding.recyclerMyPost.setHasFixedSize(true);
         binding.recyclerMyPost.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));

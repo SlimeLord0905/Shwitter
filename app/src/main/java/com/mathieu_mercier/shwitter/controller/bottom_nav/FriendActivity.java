@@ -26,12 +26,13 @@ public class FriendActivity extends BottomActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.activity_friend);
+        binding = ActivityFriendBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        //setContentView(R.layout.activity_friend);
         // On assigne la vue avant d'appeler super, car la classe parent initialise la bottom nav
         super.onCreate(savedInstanceState);
 
-        binding = ActivityFriendBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+
 
         binding.recyclerFriend.setHasFixedSize(true);
         binding.recyclerFriend.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));

@@ -30,7 +30,16 @@ public class Relation {
         this.id = relationJson.getInt("id");
         this.target_id = relationJson.getInt("target_id");
         this.user_id = relationJson.getInt("user_id");
-        this.accepted = relationJson.getBoolean("accepted");
+        int tryaccepted = relationJson.getInt("accepted");
+        if(tryaccepted == 0)
+        {
+            this.accepted = false;
+        }
+        else
+        {
+            this.accepted = true ;
+        }
+
 
     }
 

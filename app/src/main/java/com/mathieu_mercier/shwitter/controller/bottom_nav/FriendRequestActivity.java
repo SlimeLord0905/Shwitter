@@ -26,10 +26,12 @@ public class FriendRequestActivity extends BottomActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.activity_friend_request);
+        //setContentView(R.layout.activity_friend_request);
 
         binding = ActivityFriendRequestBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        super.onCreate(savedInstanceState);
+
 
         binding.recyclerFriendrequest.setHasFixedSize(true);
         binding.recyclerFriendrequest.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
@@ -39,7 +41,7 @@ public class FriendRequestActivity extends BottomActivity {
         refreshFriendRequestList();
 
         // On assigne la vue avant d'appeler super, car la classe parent initialise la bottom nav
-        super.onCreate(savedInstanceState);
+
     }
 
 
@@ -52,12 +54,10 @@ public class FriendRequestActivity extends BottomActivity {
                 ArrayList<Relation> FriendRequests = new ArrayList<Relation>();
                 for( Relation relation : Relations)
                 {
-                    if(relation.getAccepted() == false)
+                    if(relation.getAccepted() == false && relation.getTargetId() == UserService.getInstance().getCurrentUser().getId())
                     {
                         FriendRequests.add(relation);
                     }
-
-
                     friendAdapter = new FriendRequestAdapter(FriendRequests);
                     binding.recyclerFriendrequest.setAdapter(friendAdapter);
 
