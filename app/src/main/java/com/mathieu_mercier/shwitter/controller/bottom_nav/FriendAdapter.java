@@ -60,6 +60,17 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.FriendView
                 UserService.getInstance().getUserById(relation.getTargetId(), new UserSelectFetchListener() {
                     @Override
                     public void onResponse(ArrayList<User> Users) {
+
+                        binding.usernametextofficial.setText(Users.get(0).getUsername());
+                    }
+                }, parent.getContext() );
+            }
+            else
+            {
+                UserService.getInstance().getUserById(relation.getUserId(), new UserSelectFetchListener() {
+                    @Override
+                    public void onResponse(ArrayList<User> Users) {
+
                         binding.usernametextofficial.setText(Users.get(0).getUsername());
                     }
                 }, parent.getContext() );
