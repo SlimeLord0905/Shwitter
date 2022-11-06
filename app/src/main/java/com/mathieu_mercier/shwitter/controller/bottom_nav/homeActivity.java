@@ -30,11 +30,11 @@ public class homeActivity extends BottomActivity {
         super.onCreate(savedInstanceState);
 
 
-        binding.recyclerMyPost.setHasFixedSize(true);
+        /*binding.recyclerMyPost.setHasFixedSize(true);
         binding.recyclerMyPost.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
         binding.recyclerMyPost.setLayoutManager(new LinearLayoutManager(this));
 
-        refreshUserPost();
+        refreshUserPost();*/
     }
 
 
