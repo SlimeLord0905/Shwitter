@@ -7,8 +7,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="81dp"
+        android:layout_height="77dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -17,7 +17,7 @@
 
     <TextView
         android:id="@+id/titreEditView"
-        android:layout_width="567dp"
+        android:layout_width="169dp"
         android:layout_height="63dp"
         android:layout_marginStart="24dp"
         android:text="titre"
@@ -27,11 +27,11 @@
         app:layout_constraintTop_toTopOf="@+id/imageView" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton5"
+        android:id="@+id/fabdealite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/titreEditView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/titreEditView"
         app:layout_constraintTop_toTopOf="parent"
@@ -39,13 +39,36 @@
 
     <TextView
         android:id="@+id/usernameRwPost"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="111dp"
+        android:layout_height="59dp"
         android:layout_marginTop="16dp"
         android:text="TextView"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/texteEditView"
+        android:layout_width="191dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/usernameRwPost"
+        app:layout_constraintTop_toBottomOf="@+id/titreEditView" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabedit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
+        app:layout_constraintEnd_toEndOf="@+id/fabdealite"
+        app:layout_constraintStart_toStartOf="@+id/fabdealite"
+        app:layout_constraintTop_toBottomOf="@+id/fabdealite"
+        app:srcCompat="@drawable/fab_edit" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

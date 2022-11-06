@@ -24,7 +24,7 @@
             android:name=".controller.bottom_nav.FriendActivity"
             android:exported="false" />
         <activity
-            android:name=".controller.bottom_nav.homeActivity"
+            android:name=".controller.bottom_nav.homePageActivity"
             android:exported="false" />
         <activity
             android:name=".controller.login2Activity"
