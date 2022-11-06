@@ -21,7 +21,7 @@ import com.mathieu_mercier.shwitter.controller.editPostActivity;
 
 import java.util.ArrayList;
 
-public class homePageActivity extends AppCompatActivity implements onPostClickListener {
+public class homePageActivity extends BottomActivity  implements  onPostClickListener  {
     private ActivityHomePageBinding binding;
     private PostAdaptor postAdaptor;
 
@@ -31,11 +31,12 @@ public class homePageActivity extends AppCompatActivity implements onPostClickLi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        binding = ActivityHomePageBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         super.onCreate(savedInstanceState);
 
-        binding = ActivityHomePageBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+
 
         binding.recyclerPost.setHasFixedSize(true);
         binding.recyclerPost.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
@@ -52,8 +53,13 @@ public class homePageActivity extends AppCompatActivity implements onPostClickLi
             }
         });
 
-        setContentView(R.layout.activity_home_page);
+        //setContentView(R.layout.activity_home_page);
 
+    }
+
+    @Override
+    int getMenuItemId() {
+        return R.id.home;
     }
 
     private void refresh() {
