@@ -18,6 +18,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".MpActivity"
+            android:exported="false" />
+        <activity
             android:name=".controller.bottom_nav.FriendRequestActivity"
             android:exported="false" />
         <activity

@@ -1,12 +1,18 @@
 package com.mathieu_mercier.shwitter.model;
 
+import android.os.Build;
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import androidx.annotation.RequiresApi;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.sql.Timestamp;
 import java.util.Date;
 
-public class Relation {
+public class Relation implements Parcelable {
     private int id;
     private int target_id;
     private int user_id;
@@ -60,5 +66,39 @@ public class Relation {
                 ", user_id='" + user_id + '\'' +
                 ", accepted='" + accepted + '\'' +
                 '}';
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.Q)
+    protected Relation(Parcel in) {
+        id = in.readInt();
+        target_id= in.readInt();
+        user_id = in.readInt();
+        accepted = in.readBoolean();
+    }
+
+    public static final Creator<Relation> CREATOR = new Creator<Relation>() {
+        @RequiresApi(api = Build.VERSION_CODES.Q)
+        @Override
+        public Relation createFromParcel(Parcel in) {
+            return new Relation(in);
+        }
+
+        @Override
+        public Relation[] newArray(int size) {return new Relation[size];
+        }
+    };
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.Q)
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeInt(id);
+        parcel.writeInt(target_id);
+        parcel.writeInt(user_id);
+        parcel.writeBoolean(accepted);
     }
 }

@@ -2,10 +2,12 @@ package com.mathieu_mercier.shwitter.controller.bottom_nav;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.mathieu_mercier.shwitter.MpActivity;
 import com.mathieu_mercier.shwitter.R;
 import com.mathieu_mercier.shwitter.api.OnFriendClickListener;
 import com.mathieu_mercier.shwitter.api.RelationFetchListener;
@@ -20,6 +22,8 @@ import java.util.ArrayList;
 public class FriendActivity extends BottomActivity implements OnFriendClickListener {
     private ActivityFriendBinding binding;
     private FriendAdapter friendAdapter;
+    public static String KEY_EXTRA_MESSAGE = "shwitter.mathieu_mercier,com";
+
 
     int getMenuItemId() {
         return R.id.friend;
@@ -69,8 +73,8 @@ public class FriendActivity extends BottomActivity implements OnFriendClickListe
 
     @Override
     public void onFriendClicked(Relation relation) {
-       /* Intent messageListingIntent = new Intent(FriendActivity.this, //still to complet);
-        messageListingIntent.putExtra( relation);
-        startActivity(messageListingIntent);*/
+       Intent messageListingIntent = new Intent(FriendActivity.this, MpActivity.class);
+        messageListingIntent.putExtra(KEY_EXTRA_MESSAGE, relation);
+        startActivity(messageListingIntent);
     }
 }
