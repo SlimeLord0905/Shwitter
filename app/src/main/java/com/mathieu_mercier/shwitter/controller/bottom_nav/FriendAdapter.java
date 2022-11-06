@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.mathieu_mercier.shwitter.api.OnFriendClickListener;
 import com.mathieu_mercier.shwitter.api.UserSelectFetchListener;
 import com.mathieu_mercier.shwitter.databinding.RecyclerViewFriendBinding;
 import com.mathieu_mercier.shwitter.model.Relation;
@@ -20,10 +21,12 @@ import java.util.ArrayList;
 public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.FriendViewHolder> {
 
     private final ArrayList<Relation> friends;
+    private final OnFriendClickListener onFriendClickListener;
     private ViewGroup parent;
 
-    public FriendAdapter(ArrayList<Relation> friendList) {
+    public FriendAdapter(ArrayList<Relation> friendList, OnFriendClickListener onFriendClickListener) {
         this.friends = friendList;
+        this.onFriendClickListener = onFriendClickListener;
     }
 
     @NonNull
@@ -75,6 +78,13 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.FriendView
                     }
                 }, parent.getContext() );
             }
+
+            this.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    onFriendClickListener.onFriendClicked(relation);
+                }
+            });
         }
     }
 

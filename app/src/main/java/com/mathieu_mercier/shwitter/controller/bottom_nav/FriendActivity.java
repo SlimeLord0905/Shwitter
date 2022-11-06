@@ -1,11 +1,13 @@
 package com.mathieu_mercier.shwitter.controller.bottom_nav;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.mathieu_mercier.shwitter.R;
+import com.mathieu_mercier.shwitter.api.OnFriendClickListener;
 import com.mathieu_mercier.shwitter.api.RelationFetchListener;
 import com.mathieu_mercier.shwitter.databinding.ActivityFriendBinding;
 import com.mathieu_mercier.shwitter.databinding.ActivityFriendRequestBinding;
@@ -15,14 +17,14 @@ import com.mathieu_mercier.shwitter.model.UserService;
 
 import java.util.ArrayList;
 
-public class FriendActivity extends BottomActivity {
+public class FriendActivity extends BottomActivity implements OnFriendClickListener {
     private ActivityFriendBinding binding;
     private FriendAdapter friendAdapter;
 
     int getMenuItemId() {
         return R.id.friend;
     }
-
+    FriendActivity parent = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,12 +58,19 @@ public class FriendActivity extends BottomActivity {
                     }
 
 
-                    friendAdapter = new FriendAdapter(FriendList);
+                    friendAdapter = new FriendAdapter(FriendList, parent);
                     binding.recyclerFriend.setAdapter(friendAdapter);
 
 
                 }
             }
         }, this );
+    }
+
+    @Override
+    public void onFriendClicked(Relation relation) {
+       /* Intent messageListingIntent = new Intent(FriendActivity.this, //still to complet);
+        messageListingIntent.putExtra( relation);
+        startActivity(messageListingIntent);*/
     }
 }
