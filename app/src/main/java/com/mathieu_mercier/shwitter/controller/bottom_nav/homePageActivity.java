@@ -42,6 +42,9 @@ public class homePageActivity extends BottomActivity  implements  onPostClickLis
         binding.recyclerPost.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
         binding.recyclerPost.setLayoutManager(new LinearLayoutManager(this));
 
+        binding.userImage.setImageResource(R.drawable.ic_person_placeholder_foreground);
+
+
         postAdaptor = new PostAdaptor(this);
         binding.recyclerPost.setAdapter(postAdaptor);
         refresh();
@@ -53,7 +56,7 @@ public class homePageActivity extends BottomActivity  implements  onPostClickLis
             }
         });
 
-        //setContentView(R.layout.activity_home_page);
+
 
     }
 
