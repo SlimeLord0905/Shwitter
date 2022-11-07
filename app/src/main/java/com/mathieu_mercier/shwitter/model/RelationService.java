@@ -42,12 +42,12 @@ public class RelationService {
             public void onResponse(JSONObject response) {
                 try {
                     JSONArray data = response.getJSONArray("data");
-                    ArrayList<Relation> relations = new ArrayList<>();
+                    ArrayList<Relation> relations = new ArrayList<Relation>();
                     for (int i = 0; i < data.length(); i++) {
                         relations.add(new Relation(data.getJSONObject(i)));
                     }
 
-                    Listener.OnRespond((relations));
+                    Listener.OnRespond(relations);
                 } catch (JSONException e) {
                     e.printStackTrace();
                     Listener.OnRespond(null);

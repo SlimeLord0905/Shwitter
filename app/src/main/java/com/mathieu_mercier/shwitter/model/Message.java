@@ -38,11 +38,11 @@ public class Message {
         this.id = messageJson.getInt("id");
         this.relation_id = messageJson.getInt("relation_id");
         this.user_id = messageJson.getInt("user_id");
-        this.content = messageJson.getString("username");
-        Timestamp stamp = new Timestamp(messageJson.getLong("created_at"));
+        this.content = messageJson.getString("content");
+        /*Timestamp stamp = new Timestamp(messageJson.getLong("created_at"));
         this.created_at = new Date(stamp.getTime());
         stamp = new Timestamp(messageJson.getLong("updated_at"));
-        this.created_at = new Date(stamp.getTime());
+        this.created_at = new Date(stamp.getTime());*/
 
     }
 

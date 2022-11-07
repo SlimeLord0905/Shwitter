@@ -6,21 +6,22 @@
     android:layout_height="match_parent">
 
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
-            android:id="@+id/buttonPost"
+            android:id="@+id/fabAddPost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="80dp"
-            android:text="Button"
+            android:text="ajouté un post"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -33,21 +34,9 @@
             android:layout_marginBottom="80dp"
             android:text="Button"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/buttonPost"
+            app:layout_constraintEnd_toStartOf="@+id/fabAddPost"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent" />
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fabAddPost"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="24dp"
-            android:layout_marginBottom="16dp"
-            android:clickable="true"
-            app:layout_constraintBottom_toTopOf="@+id/buttonPost"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/fab_add"
-            tools:ignore="SpeakableTextPresentCheck" />
 
         <include
             layout="@layout/activity_bottom"
@@ -100,7 +89,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerMyPost"
+        android:id="@+id/recyclerPost"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="1dp"

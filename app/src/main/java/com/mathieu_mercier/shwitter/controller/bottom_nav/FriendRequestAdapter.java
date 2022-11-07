@@ -10,7 +10,6 @@ import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.mathieu_mercier.shwitter.api.UserSelectFetchListener;
-import com.mathieu_mercier.shwitter.databinding.RecyclerViewFriendBinding;
 import com.mathieu_mercier.shwitter.databinding.RecyclerViewFriendRequestBinding;
 import com.mathieu_mercier.shwitter.model.Relation;
 import com.mathieu_mercier.shwitter.model.User;
@@ -40,14 +39,13 @@ public class FriendRequestAdapter extends RecyclerView.Adapter<FriendRequestAdap
 
         @RequiresApi(api = Build.VERSION_CODES.O)
         public void bind(Relation relation) {
-            if(relation.getUserId() == UserService.getInstance().getCurrentUser().getId()) {
-                UserService.getInstance().getUserById(relation.getTargetId(), new UserSelectFetchListener() {
-                    @Override
-                    public void onResponse(ArrayList<User> Users) {
-                        binding.usernameText.setText(Users.get(0).getUsername());
-                    }
-                }, parent.getContext() );
-            }
+            UserService.getInstance().getUserById(relation.getUserId(), new UserSelectFetchListener() {
+                @Override
+                public void onResponse(ArrayList<User> Users) {
+
+                    binding.usernameText.setText(Users.get(0).getUsername());
+                }
+            }, parent.getContext() );
         }
     }
 

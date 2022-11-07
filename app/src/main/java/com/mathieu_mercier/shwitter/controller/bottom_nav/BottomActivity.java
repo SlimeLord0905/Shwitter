@@ -34,7 +34,7 @@ public abstract class BottomActivity extends AppCompatActivity {
                 // Selon l'item de menu sÃ©lectionnÃ©, on choisi la bonne activity
                 switch (menuItem.getItemId()) {
                     case R.id.home:
-                        destinationActivity =  homeActivity.class;
+                        destinationActivity =  homePageActivity.class;
                         break;
                     case R.id.friend:
                         destinationActivity = FriendActivity.class;

@@ -43,7 +43,7 @@ public class Post {
         this.id = postJson.getInt("id");
         this.user_id = postJson.getInt("user_id");
         this.title = postJson.getString("title");
-        this.content = postJson.getString("username");
+        this.content = postJson.getString("content");
         Timestamp stamp = new Timestamp(postJson.getLong("created_at"));
         this.created_at = new Date(stamp.getTime());
         stamp = new Timestamp(postJson.getLong("updated_at"));
