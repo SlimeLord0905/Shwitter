@@ -49,6 +49,7 @@ public class editCommentsActivity extends AppCompatActivity implements onComment
             public void onClick(View view) {
                 Intent editPostIntent =new Intent(editCommentsActivity.this, homePageActivity.class);
                 startActivity(editPostIntent);
+                finishAffinity();
             }
         });
         binding.buttonPost.setOnClickListener(new View.OnClickListener() {
@@ -56,14 +57,15 @@ public class editCommentsActivity extends AppCompatActivity implements onComment
             public void onClick(View view) {
                 Intent editPostIntent =new Intent(editCommentsActivity.this,homePageActivity.class);
                 startActivity(editPostIntent);
+                finishAffinity();
             }
         });
-        setContentView(R.layout.activity_edit_comments);
+
     }
 
     private void refresh() {
 
-        CommentService.getInstance().getPostComment(getCurrentUserId(), new CommentFetchListener() {
+        CommentService.getInstance().getPostComment(4	, new CommentFetchListener() {
             @Override
             public void OnRespond(ArrayList<Comment> Comments) {
 
@@ -82,5 +84,6 @@ public class editCommentsActivity extends AppCompatActivity implements onComment
     @Override
     public void onCommentsClicked(Comment comment) {
         binding.commentEditTextView.setText(comment.getContent());
+        binding.buttonPost.setText("RECOMMENT");
     }
 }

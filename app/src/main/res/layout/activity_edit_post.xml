@@ -58,7 +58,7 @@
             app:layout_constraintBottom_toTopOf="@+id/buttonPost"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/fab_add" />
+            app:srcCompat="@drawable/ic_action_name" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

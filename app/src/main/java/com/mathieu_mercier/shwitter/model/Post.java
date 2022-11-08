@@ -44,11 +44,11 @@ public class Post {
         this.user_id = postJson.getInt("user_id");
         this.title = postJson.getString("title");
         this.content = postJson.getString("content");
-        Timestamp stamp = new Timestamp(postJson.getLong("created_at"));
+       /* Timestamp stamp = new Timestamp(postJson.getLong("created_at"));
         this.created_at = new Date(stamp.getTime());
         stamp = new Timestamp(postJson.getLong("updated_at"));
         this.created_at = new Date(stamp.getTime());
-        this.image = postJson.getString("image");
+        this.image = postJson.getString("image");*/
     }
 
     public Post(int id, int relation_id, int user_id , String content, Date created_at, Date updated_at) {
