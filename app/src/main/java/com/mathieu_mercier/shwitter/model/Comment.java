@@ -20,12 +20,12 @@ public class Comment {
 
         this.id = commentJson.getInt("id");
         this.post_id = commentJson.getInt("post_id");
-        this.user_id = commentJson.getInt("user_id");
-        this.content = commentJson.getString("username");
-        Timestamp stamp = new Timestamp(commentJson.getLong("created_at"));
+       // this.user_id = commentJson.getInt("user_id");
+        this.content = commentJson.getString("content");
+      /*  Timestamp stamp = new Timestamp(commentJson.getLong("created_at"));
         this.created_at = new Date(stamp.getTime());
         stamp = new Timestamp(commentJson.getLong("updated_at"));
-        this.created_at = new Date(stamp.getTime());
+        this.created_at = new Date(stamp.getTime());*/
 
     }
 

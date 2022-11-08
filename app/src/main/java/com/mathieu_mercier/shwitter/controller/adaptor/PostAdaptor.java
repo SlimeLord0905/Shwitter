@@ -18,14 +18,23 @@ public class PostAdaptor extends RecyclerView.Adapter<PostAdaptor.PostViewHolder
 
     private final onPostClickListener PostClickListener;
     private ArrayList<Post> post;
-    public PostAdaptor( onPostClickListener postClickListener){
+    private ViewGroup parent;
+    public PostAdaptor(ArrayList<Post> userPost, onPostClickListener postClickListener){
+        this.PostClickListener = postClickListener;
+        this.post=userPost;
+    }
+
+    public PostAdaptor(onPostClickListener postClickListener) {
+
         this.PostClickListener = postClickListener;
         this.post=new ArrayList<>();
+
     }
 
     @NonNull
     @Override
     public PostViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        this.parent = parent;
         RecyclerViewPostBinding  binding = RecyclerViewPostBinding.inflate(LayoutInflater.from(parent.getContext()),parent, false);
         return new PostViewHolder(binding);
     }
@@ -48,13 +57,14 @@ public class PostAdaptor extends RecyclerView.Adapter<PostAdaptor.PostViewHolder
 
     public class PostViewHolder extends RecyclerView.ViewHolder
     {
-        private RecyclerViewPostBinding   binding;
+        private RecyclerViewPostBinding binding;
         public PostViewHolder(@NonNull RecyclerViewPostBinding binding) {
 
             super(binding.getRoot());
+            this.binding = binding; 
         }
 
-        public void bind(Post post1) {
+        public void bind(@NonNull Post post1) {
 
             binding.texteEditView.setText(post1.getContent());
             binding.titreEditView.setText(post1.getTitle());

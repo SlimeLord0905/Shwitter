@@ -33,6 +33,9 @@
             android:name=".controller.editPostActivity"
             android:exported="false" />
         <activity
+            android:name=".controller.editCommentsActivity"
+            android:exported="false" />
+        <activity
             android:name=".controller.login2Activity"
             android:exported="true">
             <intent-filter>
