@@ -48,7 +48,7 @@ public class PostAdaptor extends RecyclerView.Adapter<PostAdaptor.PostViewHolder
 
     public class PostViewHolder extends RecyclerView.ViewHolder
     {
-        private RecyclerViewPostBinding binding;
+        private RecyclerViewPostBinding   binding;
         public PostViewHolder(@NonNull RecyclerViewPostBinding binding) {
 
             super(binding.getRoot());
